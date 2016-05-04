@@ -4,7 +4,7 @@ angular.module('ng-music')
 
 
         $stateProvider
-            .state('homepage', {
+            .state('home', {
                 url: '',
                 templateUrl: 'app/components/home.html'
             })
