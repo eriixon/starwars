@@ -1,4 +1,3 @@
-header, footer, .homepage {
-    height: 20%;
-    background-color: grey;
+header, footer{
+    background-color: gray;
 }

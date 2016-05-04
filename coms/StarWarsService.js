@@ -1,5 +1,5 @@
 angular.module('starwars', [])
-  .service('StarWarsService', function($http){
+  .service('StarWarsService', function($q, $http){
     
     /**
      * https://swapi.co/
@@ -14,9 +14,14 @@ angular.module('starwars', [])
 
     
     this.getPeople = function(){
-      return $http.get(baseUrl + 'people').then(function(res){
-        return res.data;
+      
+      var deferred = $q.promise();
+      
+      $http.get(baseUrl + 'people').then(function(res){
+        deferred.resolve(res.data);
       })
+      
+      return deferred.promise;
     }
     
     this.getPerson = function(id){

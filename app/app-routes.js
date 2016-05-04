@@ -1,23 +1,23 @@
-
 angular.module('starwars')
-    .config(function($stateProviderer) {
+.config(function($stateProvider){
+    
+    $stateProvider
+    .state('home', {
+        url:'',
+        templateUrl: 'app/pages/home.html',
 
-
-        $stateProvider
-            .state('home', {
-                url: '',
-                templateUrl: 'app/components/home.html'
-            })
-            .state('catalog', {
-                url: '/people',
-                templateUrl: 'app/components/people.html',
-                controller: 'PeopleController',
-                controllerAs: 'ppl'
-            })
-            .state('details', {
-                url: '/person/:id',
-                templateUrl: 'app/components/person.html',
-                controller: 'PersonController',
-                controllerAs: 'prs'
-            })
     })
+    .state('people',{
+        url:'/people',
+        templateUrl:'pages/people.html',
+        controller: 'starWarsPeopleController',
+        controllerAs: 'spp'
+    })
+        .state('person',{
+        url:'/person: id',
+        templateUrl:'pages/person.html',
+        controller: 'starWarsPersonController',
+        controllerAs: 'spr'
+    })
+
+})

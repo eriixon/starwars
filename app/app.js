@@ -1,1 +1,4 @@
-var app = angular.module('starwars', ['ui.router', 'ui.bootstrap']);
+angular.module('starwars', [
+    'ui.router',
+    'ngSanitize'
+])
