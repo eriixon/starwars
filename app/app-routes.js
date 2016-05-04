@@ -1,5 +1,5 @@
 
-angular.module('ng-music')
+angular.module('starwars')
     .config(function($stateProviderer) {
 
 
@@ -18,6 +18,6 @@ angular.module('ng-music')
                 url: '/person/:id',
                 templateUrl: 'app/components/person.html',
                 controller: 'PersonController',
-                controllerAs: 'dc'
+                controllerAs: 'prs'
             })
     })
