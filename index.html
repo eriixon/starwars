@@ -7,33 +7,23 @@
 </head>
 
 <body>
-    
-    <header>
-        <div class="container">
-            <div class="row" style="heigth: 20%">
-                <div class="col-sm-12 text-center" >
-                    <h1>STAR WARS INFO</h1>
+
+<div class="container">
+    <div class="row">
+                <div class="col-xs-12">
+                   <img src="http://www.starwarsreport.com/wp-content/uploads/arjuna/DeathStar-banner.jpg" width="100%">
                 </div>
-            </div>
-        </div>
-
-    </header>
-
-    <div class="main-content">
-        <star-wars-people></star-wars-people>
     </div>
-    
-    <footer>
-          <div class="container">
-            <div class="row" style="heigth: 20%">
-                <div class="col-sm-12 text-center" >
-                    <h4>STAR WARS INFO</h4>
-                </div>
-            </div>
-        </div>
-        
-    </footer>
+            
+   		<div class="row" style="margin-top:50px">
+			<star-wars-people></star-wars-people>
+		</div>         
+</div>
 
+    <footer class="col-sm-12 text-center">
+        <p>Welcome to the dark side! we have cookies!</p>
+    </footer>
+    
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -43,7 +33,7 @@
   <!--  <script src="app/app-routes.js"></script> -->
     <script src="coms/PeopleComp.js"></script>
     <script src="coms/PersonComp.js"></script>
-    <script src="coms/StarWarsService.js"></script>
+    <script src="coms/starWarsApi.js"></script>
 
 </body>
 </html>

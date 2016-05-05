@@ -1,26 +1,33 @@
 (function () {
-    angular.module('starwars')
-    .component('starWarsPeople',{
-        templateUrl: 'pages/people.html',
+	'use strict';
+
+	angular.module('starwars')
+	.component('starWarsPeople', {
+		templateUrl: 'pages/people.html',
 		controller: starWarsPeopleController
-});
-function starWarsPeopleController(StarWarsService){
-    var spp = this;
-    spp.$OnInit = getPeople;
-    spp.people = [];
-    
-    function getPeople(){
-        
-        spp.getData = function (direction){
-            spp.currentPage += direction;
-            StarWarsService.getPeople(spp.currentPage).then(function(data){
-                spp.people = data.results;
-                spp.next = data.next;
-                spp.prev = data.previous;
-            });
-        };
-        spp.getData(1);
-    }
-}
-    
+	});
+	debugger
+	starWarsPeopleController.$inject = ['starWarsApi'];	//FOR MINIFICATION
+
+	function starWarsPeopleController(starWarsApi) {
+		
+		var vm = this;
+		vm.$onInit = activate;
+		vm.people = [];
+        vm.currentPage = 0;
+		
+		function activate() {
+			
+            vm.getData = function(direction){
+                vm.currentPage += direction
+                starWarsApi.getPeople(vm.currentPage).then(function(data){
+                    vm.people = data.results;
+                    vm.next = data.next;
+                    vm.prev = data.previous;
+                });
+            };
+            vm.getData(1);
+		}	
+
+	}	
 })();
