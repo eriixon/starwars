@@ -2,13 +2,13 @@ angular.module('starwars')
 .config(function($stateProvider){
     
     $stateProvider
-    .state('home', {
+ /*   .state('home', {
         url:'',
         templateUrl: 'app/pages/home.html',
 
-    })
-    .state('people',{
-        url:'/people',
+    })*/
+    .state('pepole',{
+        url:' ',
         templateUrl:'pages/people.html',
         controller: 'starWarsPeopleController',
         controllerAs: 'spp'
