@@ -1,4 +1,5 @@
-angular.module('starwars')
+(function () {
+    angular.module('starwars')
     .component('starWarsPeople',{
         templateUrl: 'pages/people.html',
 		controller: starWarsPeopleController
@@ -10,7 +11,16 @@ function starWarsPeopleController(StarWarsService){
     
     function getPeople(){
         
-        spp.getData = function ()
+        spp.getData = function (direction){
+            spp.currentPage += direction;
+            StarWarsService.getPeople(spp.currentPage).then(function(data){
+                spp.people = data.results;
+                spp.next = data.next;
+                spp.prev = data.previous;
+            });
+        };
+        spp.getData(1);
     }
-    
 }
+    
+})();
